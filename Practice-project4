@@ -1,0 +1,46 @@
+public class ConstructorExample {
+    
+    private String name;
+    private int age;
+
+    // Default Constructor
+    public ConstructorExample() {
+        this.name = "Default";
+        this.age = 0;
+    }
+
+    // Parameterized Constructor
+    public ConstructorExample(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Copy Constructor
+    public ConstructorExample(ConstructorExample other) {
+        this.name = other.name;
+        this.age = other.age;
+    }
+
+    // Getter methods
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public static void main(String[] args) {
+        // Test default constructor
+        ConstructorExample defaultInstance = new ConstructorExample();
+        System.out.println("Default Constructor - Name: " + defaultInstance.getName() + ", Age: " + defaultInstance.getAge());
+
+        // Test parameterized constructor
+        ConstructorExample paramInstance = new ConstructorExample("John", 25);
+        System.out.println("Parameterized Constructor - Name: " + paramInstance.getName() + ", Age: " + paramInstance.getAge());
+
+        // Test copy constructor
+        ConstructorExample copyInstance = new ConstructorExample(paramInstance);
+        System.out.println("Copy Constructor - Name: " + copyInstance.getName() + ", Age: " + copyInstance.getAge());
+    }
+}
