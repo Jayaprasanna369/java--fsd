@@ -1,0 +1,29 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegexVerifier {
+    public static void main(String[] args) {
+        // Define your regular expression
+        String regex = "[a-zA-Z]+\\d+";
+
+        // Test strings
+        String[] testStrings = {"abc123", "xyz456", "123abc"};
+
+        // Compile the regular expression
+        Pattern pattern = Pattern.compile(regex);
+
+        // Test each string
+        for (String testString : testStrings) {
+            boolean matches = testRegex(pattern, testString);
+            System.out.println(testString + " matches the regex: " + matches);
+        }
+    }
+
+    private static boolean testRegex(Pattern pattern, String input) {
+        // Create a Matcher object
+        Matcher matcher = pattern.matcher(input);
+
+        // Check if the input string matches the regex
+        return matcher.matches();
+    }
+}
