@@ -1,0 +1,31 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Map;
+
+public class MapTest {
+
+    public void testMapFunctionality() {
+        // Replace MyMap with the actual class implementing Map
+        Map<String, Integer> myMap = new MyMap<>();
+
+        // Test adding elements
+        myMap.put("one", 1);
+        myMap.put("two", 2);
+        myMap.put("three", 3);
+
+        // Test retrieving elements
+        assertEquals(1, myMap.get("one"));
+        assertEquals(2, myMap.get("two"));
+        assertEquals(3, myMap.get("three"));
+
+        // Test removing elements
+        myMap.remove("two");
+        assertNull(myMap.get("two"));
+
+        // Test size
+        assertEquals(2, myMap.size());
+
+        // Add more test cases based on the specific functionality you want to verify
+    }
+}
