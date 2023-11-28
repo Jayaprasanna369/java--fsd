@@ -1,0 +1,22 @@
+public class AccessModifierExample {
+
+    // Public method can be accessed from anywhere
+    public void publicMethod() {
+        System.out.println("Public method");
+    }
+
+    // Private method can only be accessed within the same class
+    private void privateMethod() {
+        System.out.println("Private method");
+    }
+
+    // Protected method can be accessed within the same package and subclasses
+    protected void protectedMethod() {
+        System.out.println("Protected method");
+    }
+
+    // Default (package-private) method can be accessed only within the same package
+    void defaultMethod() {
+        System.out.println("Default method");
+    }
+}
