@@ -1,0 +1,29 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class CollectionTest {
+
+    public void testListImplementation() {
+        List<String> myList = new ArrayList<>();
+
+        // Test adding elements
+        myList.add("element1");
+        myList.add("element2");
+
+        assertEquals(2, myList.size());
+
+        // Test removing elements
+        myList.remove("element1");
+
+        assertEquals(1, myList.size());
+
+        // Test clearing the list
+        myList.clear();
+
+        assertTrue(myList.isEmpty());
+    }
+}
