@@ -1,0 +1,34 @@
+public class OuterClass {
+    
+    private int outerField;
+
+    public OuterClass(int outerField) {
+        this.outerField = outerField;
+    }
+
+    // Inner class
+    public class InnerClass {
+        
+        private int innerField;
+
+        public InnerClass(int innerField) {
+            this.innerField = innerField;
+        }
+
+        public void display() {
+            System.out.println("Outer field: " + outerField);
+            System.out.println("Inner field: " + innerField);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Creating an instance of the outer class
+        OuterClass outerObj = new OuterClass(10);
+
+        // Creating an instance of the inner class
+        OuterClass.InnerClass innerObj = outerObj.new InnerClass(5);
+
+        // Testing the inner class functionality
+        innerObj.display();
+    }
+}
