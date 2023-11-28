@@ -1,0 +1,41 @@
+public class ArrayVerifier {
+
+    // Method to check if two arrays are equal
+    public static boolean arraysEqual(int[] arr1, int[] arr2) {
+        if (arr1.length != arr2.length) {
+            return false;
+        }
+
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] != arr2[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    // Method to test array implementations
+    public static void testArrayImplementation() {
+        // Create an array
+        int[] originalArray = {1, 2, 3, 4, 5};
+
+        // Test array copy
+        int[] copiedArray = new int[originalArray.length];
+        System.arraycopy(originalArray, 0, copiedArray, 0, originalArray.length);
+        System.out.println("Array copy test: " + arraysEqual(originalArray, copiedArray));
+
+        // Test array modification
+        originalArray[0] = 10;
+        System.out.println("Array modification test: " + (originalArray[0] == 10));
+
+        // Test array equality
+        int[] equalArray = {1, 2, 3, 4, 5};
+        System.out.println("Array equality test: " + arraysEqual(originalArray, equalArray));
+    }
+
+    public static void main(String[] args) {
+        // Run the tests
+        testArrayImplementation();
+    }
+}
