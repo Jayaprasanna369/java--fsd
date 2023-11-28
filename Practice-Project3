@@ -1,0 +1,30 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class YourClassTest {
+
+    public void testMethod1() {
+        // Arrange
+        YourClass yourObject = new YourClass();
+
+        // Act
+        int result = yourObject.method1(/* parameters */);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void testMethod2() {
+        // Arrange
+        YourClass yourObject = new YourClass();
+
+        // Act
+        String result = yourObject.method2(/* parameters */);
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    // Add more test methods for other methods in YourClass
+}
