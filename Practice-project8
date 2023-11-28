@@ -1,0 +1,14 @@
+public class StringConversionExample {
+    public static void main(String[] args) {
+        // Creating a String
+        String originalString = "Hello, World!";
+
+        // Converting String to StringBuffer
+        StringBuffer stringBuffer = new StringBuffer(originalString);
+        System.out.println("String to StringBuffer: " + stringBuffer);
+
+        // Converting String to StringBuilder
+        StringBuilder stringBuilder = new StringBuilder(originalString);
+        System.out.println("String to StringBuilder: " + stringBuilder);
+    }
+}
