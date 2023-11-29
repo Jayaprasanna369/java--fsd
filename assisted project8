@@ -1,0 +1,70 @@
+class Shape {
+    // Encapsulation: private fields
+    private String name;
+
+    // Constructor to initialize the name
+    public Shape(String name) {
+        this.name = name;
+    }
+
+    // Abstraction: method to get the shape's name
+    public String getName() {
+        return name;
+    }
+
+    // Polymorphism: method to calculate area (override in subclasses)
+    public double calculateArea() {
+        return 0.0;
+    }
+}
+
+// Inheritance: Circle is a subclass of Shape
+class Circle extends Shape {
+    // Encapsulation: private field
+    private double radius;
+
+    // Constructor to initialize name and radius
+    public Circle(String name, double radius) {
+        super(name);
+        this.radius = radius;
+    }
+
+    // Polymorphism: override calculateArea method for Circle
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Inheritance: Rectangle is a subclass of Shape
+class Rectangle extends Shape {
+    // Encapsulation: private fields
+    private double length;
+    private double width;
+
+    // Constructor to initialize name, length, and width
+    public Rectangle(String name, double length, double width) {
+        super(name);
+        this.length = length;
+        this.width = width;
+    }
+
+    // Polymorphism: override calculateArea method for Rectangle
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+}
+
+// Main class to demonstrate the program
+public class ObjectOrientedDemo {
+    public static void main(String[] args) {
+        // Creating objects of Circle and Rectangle
+        Circle circle = new Circle("Circle", 5.0);
+        Rectangle rectangle = new Rectangle("Rectangle", 4.0, 6.0);
+
+        // Accessing object properties and methods
+        System.out.println(circle.getName() + " Area: " + circle.calculateArea());
+        System.out.println(rectangle.getName() + " Area: " + rectangle.calculateArea());
+    }
+}
