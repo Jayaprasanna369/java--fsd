@@ -1,0 +1,38 @@
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
+
+public class ExceptionExample {
+
+    public static void main(String[] args) {
+        try {
+            // Using throws to declare an exception
+            methodWithThrows();
+
+            // Using throw to explicitly throw an exception
+            throwCustomException();
+
+        } catch (CustomException ce) {
+            System.out.println("Caught CustomException: " + ce.getMessage());
+
+        } finally {
+            System.out.println("Finally block executed.");
+        }
+    }
+
+    // Method using throws to declare an exception
+    private static void methodWithThrows() throws CustomException {
+        System.out.println("Inside methodWithThrows");
+        // Simulating an exception condition
+        throw new CustomException("Exception thrown in methodWithThrows");
+    }
+
+    // Method using throw to explicitly throw an exception
+    private static void throwCustomException() {
+        System.out.println("Inside throwCustomException");
+        // Explicitly throwing a custom exception
+        throw new CustomException("Explicitly thrown CustomException");
+    }
+}
