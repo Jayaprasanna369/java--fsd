@@ -1,0 +1,41 @@
+class SleepWaitExample {
+    public static void main(String[] args) {
+        final Object lock = new Object();
+
+        // Thread using sleep
+        Thread sleepThread = new Thread(() -> {
+            synchronized (lock) {
+                System.out.println("SleepThread: Started");
+                try {
+                    Thread.sleep(2000); // Sleep for 2 seconds
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("SleepThread: Completed");
+            }
+        });
+
+        // Thread using wait
+        Thread waitThread = new Thread(() -> {
+            synchronized (lock) {
+                System.out.println("WaitThread: Started");
+                try {
+                    lock.wait(); // Wait until notified
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("WaitThread: Completed");
+            }
+        });
+
+        sleepThread.start();
+        waitThread.start();
+
+        try {
+            sleepThread.join();
+            waitThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
