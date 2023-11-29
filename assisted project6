@@ -1,0 +1,20 @@
+public class ExceptionHandlingDemo {
+    public static void main(String[] args) {
+        try {
+            // Code that may throw an exception
+            int result = divide(10, 0);
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            // Catching and handling the specific exception
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            // Code in the finally block will always execute, whether an exception occurs or not
+            System.out.println("Finally block executed");
+        }
+    }
+
+    // A method that may throw an exception
+    private static int divide(int num1, int num2) {
+        return num1 / num2;
+    }
+}
