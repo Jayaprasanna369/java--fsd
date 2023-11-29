@@ -1,0 +1,37 @@
+interface Animal {
+    void makeSound();
+}
+
+interface Mammal extends Animal {
+    void giveBirth();
+}
+
+interface Bird extends Animal {
+    void layEggs();
+}
+
+// Diamond problem resolved using interfaces
+class Platypus implements Mammal, Bird {
+    public void makeSound() {
+        System.out.println("Platypus sound");
+    }
+
+    @Override
+    public void giveBirth() {
+        System.out.println("Platypus gives birth");
+    }
+
+    @Override
+    public void layEggs() {
+        System.out.println("Platypus lays eggs");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Platypus platypus = new Platypus();
+        platypus.makeSound();
+        platypus.giveBirth();
+        platypus.layEggs();
+    }
+}
