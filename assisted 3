@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class SumInRange {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the size of the array
+        System.out.print("Enter the size of the array: ");
+        int n = scanner.nextInt();
+
+        // Input array elements
+        int[] array = new int[n];
+        System.out.println("Enter the array elements:");
+        for (int i = 0; i < n; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Input range (L and R)
+        System.out.print("Enter the value of L (0 <= L <= n-1): ");
+        int L = scanner.nextInt();
+        System.out.print("Enter the value of R (L <= R <= n-1): ");
+        int R = scanner.nextInt();
+
+        // Calculate sum in the specified range
+        int sum = 0;
+        for (int i = L; i <= R; i++) {
+            sum += array[i];
+        }
+
+        // Output the result
+        System.out.println("Sum of elements in the range [" + L + ", " + R + "]: " + sum);
+
+        scanner.close();
+    }
+}
