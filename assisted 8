@@ -1,0 +1,23 @@
+import java.util.Stack;
+
+public class StackExample {
+    public static void main(String[] args) {
+        // Create a stack
+        Stack<Integer> stack = new Stack<>();
+
+        // Insert elements into the stack
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        // Print the stack
+        System.out.println("Stack after insertion: " + stack);
+
+        // Remove the top element from the stack
+        int removedElement = stack.pop();
+        System.out.println("Removed element: " + removedElement);
+
+        // Print the stack after removal
+        System.out.println("Stack after removal: " + stack);
+    }
+}
