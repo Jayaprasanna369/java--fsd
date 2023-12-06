@@ -1,0 +1,54 @@
+public class ExponentialSearch {
+
+    // Exponential search function
+    static int exponentialSearch(int[] arr, int key) {
+        int n = arr.length;
+
+        // If key is present at the first position
+        if (arr[0] == key)
+            return 0;
+
+        // Find range for binary search by repeated doubling
+        int i = 1;
+        while (i < n && arr[i] <= key)
+            i *= 2;
+
+        // Call binary search for the found range
+        return binarySearch(arr, key, i / 2, Math.min(i, n - 1));
+    }
+
+    // Binary search function
+    static int binarySearch(int[] arr, int key, int low, int high) {
+        if (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            // Check if key is present at mid
+            if (arr[mid] == key)
+                return mid;
+
+            // If key is smaller, search in the left subarray
+            if (arr[mid] > key)
+                return binarySearch(arr, key, low, mid - 1);
+
+            // If key is larger, search in the right subarray
+            return binarySearch(arr, key, mid + 1, high);
+        }
+
+        // Key not present in the array
+        return -1;
+    }
+
+    // Example usage
+    public static void main(String[] args) {
+        int[] arr = {2, 5, 8, 12, 16, 23, 38, 42, 49, 55};
+        int key = 16;
+
+        int result = exponentialSearch(arr, key);
+
+        if (result != -1) {
+            System.out.println("Element found at index " + result);
+        } else {
+            System.out.println("Element not found in the array");
+        }
+    }
+}
